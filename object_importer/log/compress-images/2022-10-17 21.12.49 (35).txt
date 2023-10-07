@@ -1,0 +1,7 @@
+File from: [./original_pictures/2022.10.28/task/*.jpg]
+
+File to: [-]
+
+Compression algorithm: [-]
+
+Description:  Directory is empty!: 

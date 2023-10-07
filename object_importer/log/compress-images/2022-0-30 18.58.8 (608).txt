@@ -1,0 +1,7 @@
+File from: [./original_pictures//original_pictures/2021.01.16/local/*.jpg]
+
+File to: [-]
+
+Compression algorithm: [-]
+
+Description:  Directory is empty!: 

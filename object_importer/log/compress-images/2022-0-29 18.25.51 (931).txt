@@ -1,0 +1,7 @@
+File from: [./2021.01.16/task/*.jpg]
+
+File to: [-]
+
+Compression algorithm: [-]
+
+Description:  Directory is empty!: 

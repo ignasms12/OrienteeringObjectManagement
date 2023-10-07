@@ -1,0 +1,7 @@
+File from: [./2020.09.19/local/*.jpeg]
+
+File to: [-]
+
+Compression algorithm: [-]
+
+Description:  Directory is empty!: 

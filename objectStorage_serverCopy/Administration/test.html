@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    const yearlyRevenue = 1200 * 12;
+    const yearlyExpenses = 450 * 12;
+
+    const principalInvestment = 0;
+    const time = 30;
+    const rate = .08;
+    const n = 12; // 12 - monthly, 1 - yearly
+    const deposit = 400;
+    const depositN = 1; // 1 - monthly, 12 - yearly
+
+    calcFinalValue = (principalInvestment, time, interest, n, deposit, depositN) => {
+        let finalValue = principalInvestment;
+        for (let i = 1; i <= time * n; i++) {
+            if (i % depositN == 0) {
+                finalValue = (finalValue * (1 + (interest / n))) + deposit;
+            } else {
+                finalValue = (finalValue * (1 + (interest / n)));
+            }
+            console.log(i, finalValue);
+        }
+        return Math.round(100 * finalValue) / 100;
+    };
+
+    getGenericCalculations = (time, yearlyRevenue, yearlyExpenses, deposit, depositN) => {
+        returnObj = {};
+
+        // Sums
+        returnObj.totalRevenue = time * yearlyRevenue;
+        returnObj.totalExpenses = time * yearlyExpenses;
+        returnObj.totalInvestments = time * deposit / depositN;
+        returnObj.totalLeftover = time * (yearlyRevenue - yearlyExpenses - (deposit / depositN));
+
+        // Savings rate
+        returnObj.savingsRate = (yearlyRevenue / (yearlyRevenue - yearlyExpenses)) * 100;
+
+        // cia kazkas negerai su kaikuriais
+
+
+        return returnObj;
+    };
+
+    standardDeviation = (data) => {
+        let mean = data.reduce((s, n) => s + n) / data.length;
+        let variance = data.reduce((s, n) => s + (n - mean) ** 2, 0) / (data.length - 1);
+        return Math.sqrt(variance);
+
+        "http://localhost:5500/LT/HIlookup.asp"
+    }
+
+// console.log(calcFinalValue(principalInvestment, time, rate, n, deposit, depositN));
+// console.log("contributions", (time * n) * (deposit / depositN));
+// console.log(getGenericCalculations(time, yearlyRevenue, yearlyExpenses, deposit, depositN));
+let arr = [3, 2, 6, 8, 9, 0, 2, 4];
+console.log(standardDeviation(arr));
+
+// We can use standart deviation method on historical data (lets say for All-time values of a certain stock)
+// Then map them to a scale of 1-5, smth like std(btc/usd) == 5, std(bonds) == 1, and calculate everything inbetween
+// Also incorporate timeframe to the mix, so maybe something like std(bond) for 30 years is 1
+
+// For expected return %, we could calculate yearly return average from historical data
+// Using all-time values of a certain stock
+
+
+// So let's say we get full historical data on nextStep(2):
+// We need full data for risk and expected graph calculation
+// And a fraction of that data for real graph generation
+
+// So to minimize ammount of transactions to API, we could, in theory, pull all historical data
+// And for real graph generation only use what's necessary
+
+// However this probably means only 1 call to the backend from frontend, that is basically "GetEverythingAtOnce()"
+
+// All-in-all, moving more of the calculations to backend may be beneficial. But keeping at least some calculations in fe can take down computing times
+
+
+</script>    
+</html>
